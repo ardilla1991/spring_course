@@ -5,9 +5,13 @@
 
 	
 	<bean id="t1000" class="com.htp.lab.spring.course.impls.robot.ModelT1000">
-		<constructor-arg ref="sonyHand"/>
+		<!-- constructor-arg ref="sonyHand"/>
 		<constructor-arg ref="sonyLeg"/>
-		<constructor-arg ref="sonyHead"/>
+		<constructor-arg ref="sonyHead"/-->
+		
+		<property name="hand" ref="toshibaHand" />
+		<property name="head" ref="toshibaHead" />
+		<property name="leg" ref="toshibaLeg" />
 	</bean>
 
 	<bean id="sonyHand" class="com.htp.lab.spring.course.impls.sony.SonyHand"/>
