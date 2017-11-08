@@ -3,8 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="initObject"
-	default-destroy-method="destroyObject"
+
 	default-lazy-init="true"
 	>
 
@@ -25,8 +24,7 @@
 	<bean id="t1000Empty" 
 		class="com.htp.lab.spring.course.impls.robot.ModelT1000"
 		scope="prototype"
-		init-method="initObject"
-		destroy-method="destroyObject">
+		>
 		<constructor-arg ref="sonyHand"/>
 		<constructor-arg ref="sonyLeg"/>
 		<constructor-arg ref="toshibaHead"/>
@@ -40,5 +38,7 @@
 	<bean id="toshibaHand" class="com.htp.lab.spring.course.impls.toshiba.ToshibaHand"/>
 	<bean id="toshibaHead" class="com.htp.lab.spring.course.impls.toshiba.ToshibaHead"/>
 	<bean id="toshibaLeg" class="com.htp.lab.spring.course.impls.toshiba.ToshibaLeg"/>
+	
+	<bean class="com.htp.lab.spring.course.main.MyBeanPostProcessor"></bean>
 	
 </beans>

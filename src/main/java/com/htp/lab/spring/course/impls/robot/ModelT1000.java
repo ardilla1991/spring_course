@@ -1,11 +1,14 @@
 package com.htp.lab.spring.course.impls.robot;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import com.htp.lab.spring.course.interfaces.Hand;
 import com.htp.lab.spring.course.interfaces.Head;
 import com.htp.lab.spring.course.interfaces.Leg;
 import com.htp.lab.spring.course.interfaces.Robot;
 
-public class ModelT1000 implements Robot {
+public class ModelT1000 implements Robot, InitializingBean, DisposableBean {
 
 	private Hand hand;
 	private Leg leg;
@@ -113,6 +116,18 @@ public class ModelT1000 implements Robot {
 	
 	public void destroyObject() {
 		System.out.println("destroy");
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println(this + " - method destroy()");
+		
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println(this + " - method init()  ");
+		
 	}
 
 }
