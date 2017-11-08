@@ -13,28 +13,21 @@
 	
 	
 	<bean id="t1000" class="com.htp.lab.spring.course.impls.robot.ModelT1000"
-		p:hand-ref="toshibaHand"
-		p:leg-ref="toshibaLeg"
-		p:head-ref="toshibaHead"
+		parent="baseModel"
 		>
-		<constructor-arg value="silver" index="0" type="String"/>
-		<constructor-arg value="true" index="2" type="boolean"/>
-		<constructor-arg value="2006" index="1" type="int"/>
+		<constructor-arg value="silver" index="3" type="String"/>
+		<constructor-arg value="true" index="5" type="boolean"/>
+		<constructor-arg value="2006" index="4" type="int"/>
 		
 		<!-- property name="hand" ref="toshibaHand" />
 		<property name="head" ref="toshibaHead" />
 		<property name="leg" ref="toshibaLeg" / -->
 	</bean>
 	
-	<!-- перез загрузкой bean будет проинициализирован databaseBean  -->
-	<bean id="t1000Empty" 
-		class="com.htp.lab.spring.course.impls.robot.ModelT1000"
-		scope="prototype"
-		depends-on="databaseBean, t1000"
-		>
-		<constructor-arg ref="sonyHand"/>
-		<constructor-arg ref="sonyLeg"/>
-		<constructor-arg ref="toshibaHead"/>
+	<bean id="baseModel" abstract="true">
+		<constructor-arg ref="sonyHand" index="0"/>
+		<constructor-arg ref="sonyLeg" index="1"/>
+		<constructor-arg ref="toshibaHead" index="2"/>
 
 	</bean>
 
