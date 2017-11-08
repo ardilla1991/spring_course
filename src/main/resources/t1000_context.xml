@@ -7,6 +7,8 @@
 	default-lazy-init="true"
 	>
 
+	<import resource="toshiba.context.xml"/>
+	<import resource="sony.context.xml"/>
 	
 	<bean id="t1000" class="com.htp.lab.spring.course.impls.robot.ModelT1000"
 		p:hand-ref="toshibaHand"
@@ -31,14 +33,7 @@
 
 	</bean>
 
-	<bean id="sonyHand" class="com.htp.lab.spring.course.impls.sony.SonyHand"/>
-	<bean id="sonyHead" class="com.htp.lab.spring.course.impls.sony.SonyHead" />
-	<bean id="sonyLeg" class="com.htp.lab.spring.course.impls.sony.SonyLeg"/>
 
-	<bean id="toshibaHand" class="com.htp.lab.spring.course.impls.toshiba.ToshibaHand"/>
-	<bean id="toshibaHead" class="com.htp.lab.spring.course.impls.toshiba.ToshibaHead"/>
-	<bean id="toshibaLeg" class="com.htp.lab.spring.course.impls.toshiba.ToshibaLeg"/>
-	
 	<bean class="com.htp.lab.spring.course.main.MyBeanPostProcessor"></bean>
 	
 </beans>
