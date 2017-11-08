@@ -6,8 +6,6 @@
 	default-lazy-init="true"
 	>
 
-	<bean id="toshibaHand" class="com.htp.lab.spring.course.impls.toshiba.ToshibaHand"/>
-	<bean id="toshibaHead" class="com.htp.lab.spring.course.impls.toshiba.ToshibaHead"/>
-	<bean id="toshibaLeg" class="com.htp.lab.spring.course.impls.toshiba.ToshibaLeg"/>
-	
+
+	<bean id="databaseBean" class="com.htp.lab.spring.cources.impls.Database"></bean>
 </beans>

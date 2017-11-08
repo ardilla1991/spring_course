@@ -12,7 +12,7 @@ public class Start {
 		//t1000.fire();
 		System.out.println(t1000.getHand());
 		
-		t1000 = (ModelT1000) context.getBean("t1000Empty");
-		System.out.println(t1000.getHand());
+		/*t1000 = (ModelT1000) context.getBean("t1000Empty");
+		System.out.println(t1000.getHand());*/
 	}
 }

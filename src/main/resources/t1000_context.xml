@@ -9,11 +9,14 @@
 
 	<import resource="toshiba.context.xml"/>
 	<import resource="sony.context.xml"/>
+	<import resource="db_context.xml" />
+	
 	
 	<bean id="t1000" class="com.htp.lab.spring.course.impls.robot.ModelT1000"
 		p:hand-ref="toshibaHand"
 		p:leg-ref="toshibaLeg"
-		p:head-ref="toshibaHead">
+		p:head-ref="toshibaHead"
+		>
 		<constructor-arg value="silver" index="0" type="String"/>
 		<constructor-arg value="true" index="2" type="boolean"/>
 		<constructor-arg value="2006" index="1" type="int"/>
@@ -23,9 +26,11 @@
 		<property name="leg" ref="toshibaLeg" / -->
 	</bean>
 	
+	<!-- перез загрузкой bean будет проинициализирован databaseBean  -->
 	<bean id="t1000Empty" 
 		class="com.htp.lab.spring.course.impls.robot.ModelT1000"
 		scope="prototype"
+		depends-on="databaseBean, t1000"
 		>
 		<constructor-arg ref="sonyHand"/>
 		<constructor-arg ref="sonyLeg"/>
